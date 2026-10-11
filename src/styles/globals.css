@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-vertice-forest text-slate-200;
+  overflow-x: hidden;
+}
+
+/* Efecto de cristal esmerilado para componentes */
+.glass-panel {
+  @apply bg-vertice-dark/60 backdrop-blur-xl border border-vertice-border;
+}
+
+/* Animación de escaneo (tipo radar) */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #32BE98, transparent);
+  animation: scan 4s linear infinite;
+  opacity: 0.2;
+}

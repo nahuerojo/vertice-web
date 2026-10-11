@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VÉRTICE — Presentación de Identidad de Marca</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0F172A;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #334155;
+    }
+
+    .slide {
+      width: 297mm;
+      height: 210mm;
+      background: #FFFFFF;
+      margin: 20px auto;
+      padding: 18mm 22mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: transparent; }
+      .slide {
+        margin: 0;
+        box-shadow: none;
+        width: 297mm;
+        height: 210mm;
+      }
+    }
+
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0F172A;
+      padding-bottom: 12px;
+    }
+    .slide-header .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #0F172A;
+    }
+    .slide-header .tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0284C7;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 10px;
+      font-size: 10px;
+      color: #64748B;
+    }
+
+    .title-area {
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .title-area h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      color: #0F172A;
+      margin: 0 0 6px 0;
+    }
+    .title-area p {
+      font-size: 13px;
+      color: #64748B;
+      margin: 0;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 25px;
+      align-items: stretch;
+      flex-grow: 1;
+    }
+
+    .logo-frame {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      min-height: 250px;
+      overflow: hidden; /* Clave: recorta el excedente blanco al hacer zoom */
+    }
+    .logo-frame img {
+      max-width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      transform: scale(2.50); /* Zoom al % */
+      transform-origin: center center;
+      transition: transform 0.2s ease;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-orange { background: #FFEDD5; color: #C2410C; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+
+    ul.specs {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    ul.specs li {
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+    }
+    ul.specs li::before {
+      content: "•";
+      color: #0F172A;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .callout {
+      background: #F1F5F9;
+      border-left: 4px solid #0F172A;
+      padding: 10px 14px;
+      font-size: 11px;
+      color: #334155;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Tabla comparativa slide 4 */
+    table.compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 15px;
+    }
+    table.compare-table th {
+      background: #0F172A;
+      color: #FFFFFF;
+      text-align: left;
+      padding: 10px 12px;
+      font-weight: 600;
+    }
+    table.compare-table td {
+      padding: 12px;
+      border-bottom: 1px solid #E2E8F0;
+      vertical-align: top;
+    }
+    table.compare-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 1: OPCIÓN 01 - PRISMA METROLÓGICO    -->
+  <!-- ========================================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="brand">VÉRTICE · CONSULTORÍA TÉCNICA</span>
+      <span class="tag">Propuesta 01 · Rigor & Acreditación</span>
+    </div>
+
+    <div class="title-area">
+      <h1>Propuesta 01: «Prisma Metrológico»</h1>
+      <p>Construcción facetada en polígonos vectoriales con tipografía sans-serif ligera de precisión suiza.</p>
+    </div>
+
+    <div class="grid-2col">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="logo-frame">
+          <img src="public/opcion1.png" alt="Opción 1">
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; background:#0B1E36; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Azul Petróleo:</strong> Rigor técnico y respaldo de auditoría.
+          </div>
+          <div style="flex:1; background:#00A8E8; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Cyan Metrológico:</strong> Calibración, precisión e instrumental.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill pill-blue">Perfil: Auditoría OAA & Ensayos</span>
+          <h3 style="margin:6px 0 10px 0; font-size:16px; color:#0F172A;">Metrología y Homologación Normativa</h3>
+          <ul class="specs">
+            <li><strong>Concepto geométrico:</strong> La convergencia en el vértice inferior refleja el punto de tolerancia cero y exactitud analítica.</li>
+            <li><strong>Percepción B2B:</strong> Proyecta una firma independiente de homologación e inspección según normas ISO/IEC 17020 e ISO 17024.</li>
+            <li><strong>Tipografía:</strong> Trazos limpios, aireados y de alta legibilidad en cabeceras de informes periciales.</li>
+          </ul>
+        </div>
+        <div class="callout">
+          <strong>Ideal si se busca:</strong> Posicionar a Vértice como la consultora con mayor rigor de laboratorio y peritaje del sector.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Evaluación de Identidad Visual · Lic. Jimena Puga</span>
+      <span>Página 01 de 04</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 2: OPCIÓN 02 - VECTOR DE IZAJE       -->
+  <!-- ========================================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="brand">VÉRTICE · CONSULTORÍA TÉCNICA</span>
+      <span class="tag">Propuesta 02 · Fuerza & Campo</span>
+    </div>
+
+    <div class="title-area">
+      <h1>Propuesta 02: «Vector de Izaje»</h1>
+      <p>Líneas de carga paralelas con bisel técnico y paleta industrial de alta visibilidad (Navy & Safety Orange).</p>
+    </div>
+
+    <div class="grid-2col">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="logo-frame">
+          <img src="public/opcion2.png" alt="Opción 2">
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; background:#0B1E36; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Azul Marino Pesado:</strong> Solidez y estructura industrial.
+          </div>
+          <div style="flex:1; background:#EA580C; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Safety Orange:</strong> Alerta, maniobra crítica y normativa vial.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill pill-orange">Perfil: Izaje Pesado & Maquinaria</span>
+          <h3 style="margin:6px 0 10px 0; font-size:16px; color:#0F172A;">Ingeniería de Maniobras e Izajes Críticos</h3>
+          <ul class="specs">
+            <li><strong>Concepto dinámico:</strong> Evoca la elevación de pluma, cables de izaje y diagramas de carga bajo normas ASME B30.</li>
+            <li><strong>Percepción B2B:</strong> Código visual estándar para operadoras petroleras, mineras y constructoras pesadas.</li>
+            <li><strong>Tipografía:</strong> Letras en negrita compacta que transmiten peso, firmeza y presencia en obra.</li>
+          </ul>
+        </div>
+        <div class="callout" style="border-left-color:#EA580C;">
+          <strong>Ideal si se busca:</strong> Conectar de inmediato con Jefes de Operaciones, Mantenimiento y Parque de Maquinaria Vial.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Evaluación de Identidad Visual · Lic. Jimena Puga</span>
+      <span>Página 02 de 04</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 3: OPCIÓN 03 - MOSAICO ESTRUCTURAL   -->
+  <!-- ========================================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="brand">VÉRTICE · CONSULTORÍA TÉCNICA</span>
+      <span class="tag">Propuesta 03 · Sello HSE & Conformidad</span>
+    </div>
+
+    <div class="title-area">
+      <h1>Propuesta 03: «Mosaico Estructural»</h1>
+      <p>Polígonos articulados en gama de verdes técnicos que representan solidez sistémica y aptitud operativa.</p>
+    </div>
+
+    <div class="grid-2col">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="logo-frame">
+          <img src="public/opcion3.png" alt="Opción 3">
+        </div>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; background:#064E3B; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Verde Bosque Profundo:</strong> Sello de aptitud y certificación.
+          </div>
+          <div style="flex:1; background:#0D9488; color:#fff; padding:8px 12px; border-radius:4px; font-size:11px;">
+            <strong>Verde Esmeralda Técnico:</strong> Seguridad laboral y prevención HSE.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="pill pill-green">Perfil: Conformidad & Seguridad</span>
+          <h3 style="margin:6px 0 10px 0; font-size:16px; color:#0F172A;">Higiene, Seguridad y Sistemas de Gestión</h3>
+          <ul class="specs">
+            <li><strong>Alineación cromática:</strong> Incorpora la paleta de verdes en un lenguaje de ingeniería sobrio y sin estridencias.</li>
+            <li><strong>Concepto sistémico:</strong> Los módulos articulados comunican la unión de las áreas técnica, legal y operativa.</li>
+            <li><strong>Efecto en certificados:</strong> Funciona naturalmente como sello de aprobación ("Apto Operativo / Conforme").</li>
+          </ul>
+        </div>
+        <div class="callout" style="border-left-color:#059669;">
+          <strong>Ideal si se busca:</strong> Posicionar a Vértice desde la perspectiva de prevención de riesgos y conformidad ante ART y aseguradoras.
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Evaluación de Identidad Visual · Lic. Jimena Puga</span>
+      <span>Página 03 de 04</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLIDE 4: MATRIZ COMPARATIVA DE DECISIÓN    -->
+  <!-- ========================================== -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="brand">VÉRTICE · CONSULTORÍA TÉCNICA</span>
+      <span class="tag">Resumen Comparativo</span>
+    </div>
+
+    <div class="title-area">
+      <h1>Matriz de Decisión Estratégica</h1>
+      <p>Criterios de aplicación técnica para definir la identidad institucional de Vértice.</p>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Criterio</th>
+          <th style="width: 25%;">Opción 1: Prisma Metrológico</th>
+          <th style="width: 25%;">Opción 2: Vector de Izaje</th>
+          <th style="width: 25%;">Opción 3: Mosaico Estructural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Territorio Visual</strong></td>
+          <td>Auditoría OAA, metrología de carga e ISO 17020.</td>
+          <td>Izaje pesado, plumas mecánicas y normas ASME B30.</td>
+          <td>Higiene y Seguridad (HSE) y apto operativo.</td>
+        </tr>
+        <tr>
+          <td><strong>Paleta de Color</strong></td>
+          <td>Azul Petróleo & Cyan Eléctrico.</td>
+          <td>Azul Marino & Safety Orange.</td>
+          <td>Verde Esmeralda & Verde Bosque.</td>
+        </tr>
+        <tr>
+          <td><strong>Público Objetivo Clave</strong></td>
+          <td>Directores de Planta y Comités de Auditoría.</td>
+          <td>Jefes de Mantenimiento y Rigging de Campo.</td>
+          <td>Gerentes de HSE y Aseguradoras de Riesgo.</td>
+        </tr>
+        <tr>
+          <td><strong>Rendimiento en Certificados</strong></td>
+          <td>Cabecera pericial técnica y formal.</td>
+          <td>Alto contraste en credenciales de operadores.</td>
+          <td>Excelente integración como sello de aptitud.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:14px; border-radius:6px; margin-top:15px; font-size:11.5px; color:#475569;">
+      <strong>Pregunta para la reunión:</strong> ¿Hacia qué eje prioritario conviene inclinar la consultora: el rigor de auditoría y acreditación (Opción 1), la potencia de maniobra en izaje pesado (Opción 2), o el sello integral de seguridad laboral y conformidad (Opción 3)?
+    </div>
+
+    <div class="slide-footer">
+      <span>Vértice Consultora · Fase 1: Identidad y Documentación Técnica</span>
+      <span>Página 04 de 04</span>
+    </div>
+  </div>
+
+</body>
+</html>
